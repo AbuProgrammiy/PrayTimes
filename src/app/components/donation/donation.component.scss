@@ -1,0 +1,45 @@
+.main{
+    width: 100%;
+    padding: 5vw;
+}
+
+.content-handler{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.coffee-img{
+    width: 150px;
+    height: 150px;
+}
+
+.introduction{
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 20px;
+}
+
+.link{
+    margin-left: 5px;
+    margin-right: 5px;
+    color: black;
+}
+
+.card-number{
+    text-align: center;
+}
+
+@media only screen and (min-width: 601px) {
+    .introduction{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .introduction{
+        width: 100%;
+    }
+}
