@@ -25,7 +25,8 @@
                             <div class="input-group request-menu">
                                 <span class="input-group-text basic-url"
                                     id="basic-addon3">https://prayreminder.more-info.uz/GetTodaysPrayTimes/</span>
-                                <select [(ngModel)]="DailyRegion" class="form-select" aria-label="Default select example">
+                                <select [(ngModel)]="DailyRegion" class="form-select"
+                                    aria-label="Default select example">
                                     <option>Toshkent</option>
                                     <option>Andijon</option>
                                     <option>Buxoro</option>
@@ -44,7 +45,8 @@
                                 <input type="date" [(ngModel)]="DailyDate" class="form-control">
                             </div>
                         </div>
-                        <button (click)="getDailyPrayTimes()" ngClass="{'disabled':isLoading" class="btn btn-primary execute-btn">
+                        <button (click)="getDailyPrayTimes()" ngClass="{'disabled':isLoading"
+                            class="btn btn-primary execute-btn">
                             @if(isLoading){
                             <div class="spinner-border spinner-border-sm" role="status">
                                 <span class="visually-hidden">Loading...</span>
@@ -77,7 +79,8 @@
                             <div class="input-group request-menu">
                                 <span class="input-group-text basic-url"
                                     id="basic-addon3">https://prayreminder.more-info.uz/GetTodaysPrayTimes/</span>
-                                <select [(ngModel)]="MonthlyRegion" class="form-select" aria-label="Default select example">
+                                <select [(ngModel)]="MonthlyRegion" class="form-select"
+                                    aria-label="Default select example">
                                     <option>Toshkent</option>
                                     <option>Andijon</option>
                                     <option>Buxoro</option>
@@ -96,7 +99,8 @@
                                 <input type="month" [(ngModel)]="MonthlyDate" class="form-control">
                             </div>
                         </div>
-                        <button (click)="getMonthlyPrayTimes()" ngClass="{'disabled':isLoading" class="btn btn-primary execute-btn">
+                        <button (click)="getMonthlyPrayTimes()" ngClass="{'disabled':isLoading"
+                            class="btn btn-primary execute-btn">
                             @if(isLoading){
                             <div class="spinner-border spinner-border-sm" role="status">
                                 <span class="visually-hidden">Loading...</span>
@@ -134,9 +138,9 @@
     <footer class="footer">
         <h1 class="nick-name">&#64;abuprogrammiy</h1>
         <div class="content-handler">
+            <a class="icon" target="_blank" href="https://youtube.com/@abuprogrammiy"><i class="bi bi-youtube"></i></a>
             <a class="icon" target="_blank" href="https://t.me/abuprogrammiy"><i class="bi bi-telegram"></i></a>
             <a class="icon" target="_blank" href="https://github.com/abuprogrammiy"><i class="bi bi-github"></i></a>
-            <a class="icon" target="_blank" href="https://youtube.com/@abuprogrammiy"><i class="bi bi-youtube"></i></a>
         </div>
     </footer>
 </div>

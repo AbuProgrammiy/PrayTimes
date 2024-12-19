@@ -33,12 +33,10 @@ export class IntroductionComponent {
     this.praytimesService.getDailyPrayTimes(this.DailyRegion, this.DailyDate).subscribe({
       next: (response) => {
         this.dailyPrayTimes = response
-        console.log(response)
         this.dailyPrayTimesRequestUrl = `${this.baseUrl}/GetDailyPrayTimes/${this.DailyRegion}/${this.DailyDate}`
         this.isLoading = false
       },
       error: (err) => {
-        console.log(err)
         this.isLoading = false
       }
     })
@@ -50,12 +48,10 @@ export class IntroductionComponent {
     this.praytimesService.getMonthlyPrayTimes(this.MonthlyRegion, this.MonthlyDate).subscribe({
       next: (response) => {
         this.monthlyPrayTimes = response
-        console.log(response)
         this.monthlyPrayTimesRequestUrl = `${this.baseUrl}/GetMonthlyPrayTimes/${this.MonthlyRegion}/${this.MonthlyDate}`
         this.isLoading = false
       },
       error: (err) => {
-        console.log(err)
         this.isLoading = false
       }
     })

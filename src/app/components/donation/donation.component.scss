@@ -32,6 +32,26 @@
     text-align: center;
 }
 
+.footer{
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(25,135,84);
+}
+
+.nick-name{
+    text-align: center;
+    color: white;
+}
+
+.icon{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 40px;
+    color: white;
+}
+
 @media only screen and (min-width: 601px) {
     .introduction{
         width: 80%;
