@@ -13,12 +13,10 @@ export class PraytimesService {
   private baseUrl = environment.baseUrl
 
   getDailyPrayTimes(region: string, date: string): Observable<any> {
-    console.log(`${this.baseUrl}/GetDailyPrayTimes/${region}/${date}`)
     return this.httpClient.get(`${this.baseUrl}/GetDailyPrayTimes/${region}/${date}`)
   }
 
   getMonthlyPrayTimes(region: string, date: string): Observable<any> {
-    console.log(`${this.baseUrl}/GetMonthlyPrayTimes/${region}/${date}`)
     return this.httpClient.get(`${this.baseUrl}/GetMonthlyPrayTimes/${region}/${date}`)
   }
 }
