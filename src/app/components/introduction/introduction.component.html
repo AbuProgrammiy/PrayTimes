@@ -14,7 +14,7 @@
                         aria-expanded="true" aria-controls="collapseOne">
                         <button class="btn btn-primary">Get</button>
                         <div class="link">
-                            https://prayreminder.more-info.uz/GetTodaysPrayTimes/&#123;region&#125;/&#123;date&#125;
+                            {{baseUrl}}/GetDailyPrayTimes/&#123;region&#125;/&#123;date&#125;
                         </div>
                     </div>
                 </h2>
@@ -24,7 +24,7 @@
                             <label for="basic-url" class="form-label">Parameters</label>
                             <div class="input-group request-menu">
                                 <span class="input-group-text basic-url"
-                                    id="basic-addon3">https://prayreminder.more-info.uz/GetTodaysPrayTimes/</span>
+                                    id="basic-addon3">{{baseUrl}}/GetDailyPrayTimes/</span>
                                 <select [(ngModel)]="DailyRegion" class="form-select"
                                     aria-label="Default select example">
                                     <option>Toshkent</option>
@@ -68,7 +68,7 @@
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         <button class="btn btn-primary">Get</button>
                         <div class="link">
-                            https://prayreminder.more-info.uz/GetTodaysPrayTimes/&#123;region&#125;/&#123;date&#125;
+                            {{baseUrl}}/GetMonthlyPrayTimes/&#123;region&#125;/&#123;date&#125;
                         </div>
                     </div>
                 </h2>
@@ -78,7 +78,7 @@
                             <label for="basic-url" class="form-label">Parameters</label>
                             <div class="input-group request-menu">
                                 <span class="input-group-text basic-url"
-                                    id="basic-addon3">https://prayreminder.more-info.uz/GetTodaysPrayTimes/</span>
+                                    id="basic-addon3">{{baseUrl}}/GetMonthlyPrayTimes/</span>
                                 <select [(ngModel)]="MonthlyRegion" class="form-select"
                                     aria-label="Default select example">
                                     <option>Toshkent</option>
