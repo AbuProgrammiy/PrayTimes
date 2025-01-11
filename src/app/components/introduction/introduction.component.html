@@ -135,6 +135,21 @@
             </div>
         </div>
     </div>
+    <div class="statistics">
+        <h1 class="statistics-header">Statistika</h1>
+        <h4 class="statistics-header">Saytga tashrif buyurganlar soni statistikasi</h4>
+        <div class="statistic-handler">
+            <div class="card">
+                <p-chart type="bar" [data]="siteRequests"/>
+            </div>
+        </div>
+        <h4 class="statistics-header">APIga bo'lgan requestlar soni statistikasi</h4>
+        <div class="statistic-handler">
+            <div class="card">
+                <p-chart type="bar" [data]="apiRequests"/>
+            </div>
+        </div>
+    </div>
     <footer class="footer">
         <h1 class="nick-name">&#64;abuprogrammiy</h1>
         <div class="content-handler">

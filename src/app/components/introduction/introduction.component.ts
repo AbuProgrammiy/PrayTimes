@@ -1,7 +1,8 @@
 import { DatePipe } from '@angular/common';
 import { environment } from '../../../environments/environment.development';
 import { PraytimesService } from './../../services/praytimes/praytimes.service';
-import { Component, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
+import { RequestsService } from '../../services/requests/requests.service';
 
 @Component({
   selector: 'introduction',
@@ -10,20 +11,37 @@ import { Component, ElementRef } from '@angular/core';
 })
 export class IntroductionComponent {
 
-  constructor(private praytimesService: PraytimesService, private datePipe:DatePipe) {
+  constructor(private praytimesService: PraytimesService, private requestsServeice: RequestsService, private datePipe: DatePipe) {
     this.getDailyPrayTimes()
     this.getMonthlyPrayTimes()
+    this.addSiteRequest()
+    this.getSiteMonthlyRequests()
+    this.getAPIMonthlyRequests()
   }
 
   baseUrl: string = environment.baseUrl
   DailyRegion: string = "Toshkent"
   MonthlyRegion: string = "Toshkent"
   DailyDate: string = new Date().toISOString().substring(0, 10);
-  MonthlyDate: string = this.datePipe.transform(new Date(),"yyyy-MM")!
+  MonthlyDate: string = this.datePipe.transform(new Date(), "yyyy-MM")!
   dailyPrayTimes!: any
   monthlyPrayTimes!: any
   dailyPrayTimesRequestUrl!: string
   monthlyPrayTimesRequestUrl!: string
+
+  dataSample = {
+    labels: [],
+    datasets: [
+      {
+        label: "",
+        data: [],
+        backgroundColor: [],
+      }
+    ]
+  }
+
+  siteRequests: any = this.dataSample
+  apiRequests: any = this.dataSample
 
   isLoading: boolean = false
 
@@ -55,5 +73,77 @@ export class IntroductionComponent {
         this.isLoading = false
       }
     })
+  }
+
+  addSiteRequest(){
+    this.requestsServeice.addSiteRequests().subscribe({
+      next: (response) => {
+
+      },
+      error: (err) => {
+        
+      }
+    })
+  }
+
+  getSiteMonthlyRequests() {
+    this.requestsServeice.getSiteMonthlyRequests().subscribe({
+      next: (response) => {
+        const counts = response.response.map((item: any) => item.count)
+        const dates = response.response.map((item: any) => item.date.slice(5))
+
+        this.siteRequests = {
+          labels: dates,
+          datasets: [
+            {
+              label: 'Saytga tashrif buyurganlar',
+              data: counts,
+              backgroundColor: this.generateColors(counts.length),
+            }
+          ]
+        };
+      },
+      error: (err) => {
+
+      }
+    })
+  }
+
+  getAPIMonthlyRequests() {
+    this.requestsServeice.getAPIMonthlyRequests().subscribe({
+      next: (response) => {
+        const counts = response.response.map((item: any) => item.count)
+        const dates = response.response.map((item: any) => item.date.slice(5))
+
+        this.apiRequests = {
+          labels: dates,
+          datasets: [
+            {
+              label: 'APIga bo\'lgan requestlar',
+              data: counts,
+              backgroundColor: this.generateColors(counts.length),
+            }
+          ]
+        };
+      },
+      error: (err) => {
+
+      }
+    })
+  }
+
+  generateColors(count: number) {
+    const colors: string[] = [];
+
+    for (let i = 0; i < count; i++) {
+      const r = Math.floor(Math.random() * 256);  // Random red value (0-255)
+      const g = Math.floor(Math.random() * 256);  // Random green value (0-255)
+      const b = Math.floor(Math.random() * 256);  // Random blue value (0-255)
+      const alpha = 0.2;                          // Fixed alpha value (opacity)
+
+      colors.push(`rgba(${r}, ${g}, ${b}, ${alpha})`);
+    }
+
+    return colors;
   }
 }

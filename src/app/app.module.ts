@@ -9,6 +9,11 @@ import { DonationComponent } from './components/donation/donation.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// PrimeNg modules:
+import { ButtonModule } from 'primeng/button';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import { DatePipe } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ButtonModule,
+    BrowserAnimationsModule,
+    ChartModule
   ],
   providers: [
     provideClientHydration(),

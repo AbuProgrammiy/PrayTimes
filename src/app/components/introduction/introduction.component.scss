@@ -125,9 +125,22 @@ option:hover {
     padding-right: 10px;
 }
 
+.statistics{
+    margin-top: 100px;
+}
+
+.statistics-header{
+    text-align: center;
+    color: white;
+}
+
+.statistics-header{
+    margin-top: 50px;
+}
+
 .footer{
     width: 100%;
-    margin-top: 50px;
+    margin-top: 150px;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: rgb(25,135,84);
@@ -159,6 +172,11 @@ option:hover {
         width: 10vw;
         height: 10vw;
     }
+
+    .statistic-handler{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -174,5 +192,10 @@ option:hover {
     .source-logo{
         width: 30vw;
         height: 30vw;
+    }
+
+    .statistic-handler{
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
