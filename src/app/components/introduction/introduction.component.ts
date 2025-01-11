@@ -78,7 +78,8 @@ export class IntroductionComponent {
   addSiteRequest(){
     this.requestsServeice.addSiteRequests().subscribe({
       next: (response) => {
-
+        console.log("Add Request vvv")
+        console.log(response)
       },
       error: (err) => {
         
@@ -102,6 +103,8 @@ export class IntroductionComponent {
             }
           ]
         };
+        console.log("Add Request vvv")
+        console.log(response)
       },
       error: (err) => {
 
@@ -125,6 +128,8 @@ export class IntroductionComponent {
             }
           ]
         };
+        console.log("Add Request vvv")
+        console.log(response)
       },
       error: (err) => {
 
