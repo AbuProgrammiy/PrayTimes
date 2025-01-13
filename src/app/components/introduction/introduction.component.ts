@@ -14,6 +14,9 @@ export class IntroductionComponent {
   constructor(private praytimesService: PraytimesService, private requestsServeice: RequestsService, private datePipe: DatePipe) {
     this.getDailyPrayTimes()
     this.getMonthlyPrayTimes()
+  }
+  
+  ngOnInit(): void {
     this.addSiteRequest()
     this.getSiteMonthlyRequests()
     this.getAPIMonthlyRequests()
