@@ -17,10 +17,10 @@ export class RequestsService {
   }
 
   getSiteMonthlyRequests():Observable<any>{
-    return this.httpClient.get(`${this.baseUrl}/Requests/GetMonthlySiteRequests`)
+    return this.httpClient.get(`${this.baseUrl}/Requests/GetMonthlySiteRequests?something=${crypto.randomUUID()}`)
   }
   
   getAPIMonthlyRequests():Observable<any>{
-    return this.httpClient.get(`${this.baseUrl}/Requests/GetMonthlyAPIRequests`)
+    return this.httpClient.get(`${this.baseUrl}/Requests/GetMonthlyAPIRequests?something=${crypto.randomUUID()}`)
   }
 }
